@@ -1,15 +1,17 @@
 <script setup lang="ts">
-  import { getToken, onMessage } from 'firebase/messaging'
-  const { $firebaseMessaging } = useNuxtApp()
-
+  import { getToken, onMessage, getMessaging } from 'firebase/messaging'
   onMounted(() => {
-    onMessage($firebaseMessaging, (payload) => {
-      console.log('Message on client', payload)
-    })
+    if (process.client) {
+      const messaging = getMessaging()
+      onMessage(messaging, (payload) => {
+        console.log('Message on client', payload)
+      })
+    }
   })
 
   if (process.client) {
-    const token = await getToken($firebaseMessaging, {
+    const messaging = getMessaging()
+    const token = await getToken(messaging, {
       vapidKey: 'BDV4FE9CMx--v_5gQRsqMt0L4X9p17FBAsFFwEgaj60VingYcX7aNoAcwBNMTvtYqCUHP86BsOL9sg2Jp1dhILQ',
     })
       .then((currentToken) => {

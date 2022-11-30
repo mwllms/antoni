@@ -23,11 +23,5 @@ const analytics = getAnalytics(app)
 const messaging = getMessaging(app)
 
 export default defineNuxtPlugin((NuxtApp) => {
-  return {
-    provide: {
-      firebaseApp: app,
-      firebaseAnalytics: analytics,
-      firebaseMessaging: messaging,
-    },
-  }
+  //
 })
