@@ -10,4 +10,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+  build: {
+    transpile: ['web-push'],
+  },
 })

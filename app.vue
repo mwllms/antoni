@@ -1,40 +1,31 @@
 <script setup lang="ts">
-  import { getToken, onMessage, getMessaging } from 'firebase/messaging'
-  onMounted(() => {
+  const requestPermission = () => {
     if (process.client) {
-      const messaging = getMessaging()
-      onMessage(messaging, (payload) => {
-        console.log('Message on client', payload)
-      })
-    }
-  })
-
-  if (process.client) {
-    const messaging = getMessaging()
-    const token = await getToken(messaging, {
-      vapidKey: 'BDV4FE9CMx--v_5gQRsqMt0L4X9p17FBAsFFwEgaj60VingYcX7aNoAcwBNMTvtYqCUHP86BsOL9sg2Jp1dhILQ',
-    })
-      .then((currentToken) => {
-        if (currentToken) {
-          // Send the token to your server and update the UI if necessary
-          // ...
-          return currentToken
-        } else {
-          // Show permission request UI
-          console.log('No registration token available. Request permission to generate one.')
-          // ...
+      Notification.requestPermission().then((result) => {
+        if (result === 'granted') {
+          console.log('permission granted')
         }
       })
-      .catch((err) => {
-        console.log('An error occurred while retrieving token. ', err)
-        // ...
+    }
+  }
+  const sendNotification = async () => {
+    const subscription = useState('subscription')
+    if (subscription.value) {
+      await useFetch('/api/notification', {
+        method: 'POST',
+        body: {
+          subscription: subscription.value,
+          payload: 'Hello there!',
+          ttl: 5000,
+        },
       })
-    console.log(token)
+    }
   }
 </script>
 
 <template>
   <div>
-    <NuxtWelcome />
+    <button @click="requestPermission">Request permission</button>
+    <button @click="sendNotification">Send Notification</button>
   </div>
 </template>

@@ -4,7 +4,6 @@
   "description": "BuurtApp voor de Van Leeuwenhoekstraat en omgeving.",
   "lang": "nl",
   "start_url": "/?standalone=true",
-  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
