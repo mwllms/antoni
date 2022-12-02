@@ -13,4 +13,5 @@ export default defineNuxtConfig({
   build: {
     transpile: ['web-push'],
   },
+  modules: ['@nuxtjs/tailwindcss'],
 })
