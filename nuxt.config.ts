@@ -13,5 +13,8 @@ export default defineNuxtConfig({
   build: {
     transpile: ['web-push'],
   },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt'],
+  imports: {
+    dirs: ['stores'],
+  },
 })
