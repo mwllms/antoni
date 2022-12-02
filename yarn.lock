@@ -848,6 +848,11 @@
     "@unhead/ssr" "^1.0.4"
     "@unhead/vue" "^1.0.4"
 
+"@xata.io/client@^0.21.3":
+  version "0.21.3"
+  resolved "https://registry.yarnpkg.com/@xata.io/client/-/client-0.21.3.tgz#8952b2895b27824fed0e757e97a2447b26821d90"
+  integrity sha512-y0ITyIqw8JcqlynxvoAIJLiPj5j6CldIcwlOuUIXJ9RyxipevCCliDT/PbJUegHkj3hS+eTPPT9SVmvRJBQ6SA==
+
 "@zhead/schema@^1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@zhead/schema/-/schema-1.0.4.tgz#f37419c72c1707c677a288b1a9d6fbff561811ee"

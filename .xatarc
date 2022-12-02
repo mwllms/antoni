@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Mark-Willems-s-workspace-eh20ac.eu-west-1.xata.sh/db/antoni",
+  "codegen": {
+    "output": "server/utils/xata.ts"
+  }
+}

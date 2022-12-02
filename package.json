@@ -15,5 +15,7 @@
     "prettier": "^2.8.0",
     "prettier-plugin-tailwindcss": "^0.2.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@xata.io/client": "^0.21.3"
+  }
 }
