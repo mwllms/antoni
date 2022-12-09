@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="flex h-screen w-full items-center">
     <slot />
   </div>
 </template>
